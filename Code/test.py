@@ -1,3 +1,4 @@
+#sams.py
 import cv2
 import pytesseract
 import xml.etree.ElementTree as ET
@@ -51,6 +52,68 @@ for index, name in attendance_data.items():
 
 # Close any open windows
 cv2.destroyAllWindows()
+
+#infovis.py ---- not complete ----
+import matplotlib.pyplot as plt
+import mysql.connector
+
+# Function to fetch student attendance data from the database
+def fetch_student_attendance(index_number):
+    try:
+        # Replace these values with the database connection values for your system
+        conn = mysql.connector.connect(host='localhost',
+                                       database='student_attendance',
+                                       user='root',
+                                       password='Fgv#erd2')
+        cursor = conn.cursor()
+
+        # Convert index_number to string
+        index_number = str(index_number)
+
+        # Fetch student attendance information from the database
+        cursor.execute("SELECT student_name, attendance FROM student WHERE index_number = %s", (index_number,))
+        record = cursor.fetchone()
+
+        # Close the cursor and the database connection
+        cursor.close()
+        conn.close()
+
+        return record
+    
+    except mysql.connector.Error as error:
+        print('Error: {}'.format(error))
+        return None
+
+# Function to plot the attendance information
+def plot_student_attendance(student_name, attendance):
+    # Data for the bar graph
+    labels = ['Present', 'Absent']
+    values = [0, 0] 
+
+    if attendance == 'Present':
+        values[0] = 1
+    elif attendance == 'Absent':
+        values[1] = 1
+
+    # Create the bar graph
+    plt.figure(figsize=(6, 4))
+    plt.bar(labels, values, color=['green', 'red'])
+    plt.xlabel('Attendance Status')
+    plt.ylabel('Count')
+    plt.title(f'Attendance Summary for {student_name}')
+    plt.show()
+
+# Input student index
+student_index = input("Enter student index: ")
+
+# Fetch student attendance data from the database
+record = fetch_student_attendance(student_index)
+
+if record:
+    student_name, attendance = record
+    plot_student_attendance(student_name, attendance)
+else:
+    print(f"Student with index {student_index} not found.")
 
 
 
