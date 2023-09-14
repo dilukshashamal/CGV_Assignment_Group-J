@@ -51,7 +51,7 @@ try:
     conn = mysql.connector.connect(host='localhost',
                                    database='student_attendance',
                                    user='root',
-                                   password='Fgv#erd2')
+                                   password='<enter password>')
     cursor = conn.cursor()
 
     # Insert attendance data into the student table
