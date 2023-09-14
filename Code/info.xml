@@ -6,14 +6,77 @@
                 <student>
                     <index>001</index>
                     <name>John Snow</name>
+                    <status>Present</status>
                 </student>
                 <student>
                     <index>007</index>
                     <name>James Bond</name>
+                    <status>Absent</status>
                 </student>
                 <student>
                     <index>009</index>
                     <name>Andare</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>001</index>
+                    <name>John Snow</name>
+                    <status>Absent</status>
+                </student>
+                <student>
+                    <index>007</index>
+                    <name>James Bond</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>009</index>
+                    <name>Andare</name>
+                    <status>Absent</status>
+                </student>
+                <student>
+                    <index>001</index>
+                    <name>John Snow</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>007</index>
+                    <name>James Bond</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>009</index>
+                    <name>Andare</name>
+                    <status>Absent</status>
+                </student>
+                <student>
+                    <index>001</index>
+                    <name>John Snow</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>007</index>
+                    <name>James Bond</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>009</index>
+                    <name>Andare</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>001</index>
+                    <name>John Snow</name>
+                    <status>Absent</status>
+                </student>
+                <student>
+                    <index>007</index>
+                    <name>James Bond</name>
+                    <status>Present</status>
+                </student>
+                <student>
+                    <index>009</index>
+                    <name>Andare</name>
+                    <status>Present</status>
                 </student>
             </l6>
         </batches>
